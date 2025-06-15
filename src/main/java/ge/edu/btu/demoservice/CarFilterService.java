@@ -20,8 +20,8 @@ public class CarFilterService {
 
     public ApiResponse getCars(CarDto filter) {
         var filteredCars = cars.stream().filter(item ->
-                (filter.getManufacturer() == null || item.getManufacturer().equalsIgnoreCase(filter.getManufacturer())) &&
-                        (filter.getModel() == null || item.getModel().equalsIgnoreCase(filter.getModel())) &&
+                (filter.getManufacturer() == null || item.getManufacturer().equalsIgnoreCase(filter.getModel())) &&
+                        (filter.getModel() == null || item.getModel().equalsIgnoreCase(filter.getManufacturer())) &&
                         (filter.getColor() == null || item.getColor().equalsIgnoreCase(filter.getColor())) &&
                         (filter.getYear() == null || item.getYear().equals(filter.getYear()))
         ).toList();
