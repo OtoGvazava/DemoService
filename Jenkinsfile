@@ -10,12 +10,6 @@ pipeline {
     }
 
     stages {
-//         stage('Checkout') {
-//             steps {
-//                 git url: "${REPO_URL}", branch: 'main'
-//             }
-//         }
-
         stage('Code Quality Check') {
             steps {
                 sh 'mvn checkstyle:checkstyle pmd:pmd spotbugs:spotbugs || true'
